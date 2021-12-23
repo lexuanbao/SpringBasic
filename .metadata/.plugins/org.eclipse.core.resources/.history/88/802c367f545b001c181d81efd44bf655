@@ -1,0 +1,24 @@
+package com.example.demo.Controllers;
+
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Model.UserModel;
+
+@RestController
+@RequestMapping("/api")
+public class UserController {
+	
+	@GetMapping("/users")
+	public List<UserModel> getUser() {
+		return List.of(
+				new UserModel("Le Van A", "Address", 18, new Date(2021, 12, 12)),
+				new UserModel("Le Van B", "Address", 18, new Date(2021, 12, 12))
+		);
+	}
+}
